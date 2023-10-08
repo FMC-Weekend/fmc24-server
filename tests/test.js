@@ -1,7 +1,11 @@
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-var raw = "{\n  \"name\":\"shubham\"\n}";
+var raw = JSON.stringify({
+  "name": "shubham",
+  "email": "shubam@gmail.com",
+  "phone": "6201060887"
+});
 
 var requestOptions = {
   method: 'POST',
