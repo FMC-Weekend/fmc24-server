@@ -5,6 +5,9 @@ const server = createServer(app)
 app.get('/', (req, res) => {
     res.send("Hello from fmc")
 });
-server.listen(process.env.PORT || 3000, (req, res) => {
-    console.log("Server is running on port 3000")
+import userRouter from "./routes/users.r.js"
+app.use("/api", userRouter)
+const PORT=process.env.PORT || 3000;
+server.listen( PORT ,(req, res) => {
+    console.log(`Server is running on port ${PORT}`)
 })
