@@ -1,5 +1,5 @@
 node_modules
-fmc.sqlite
+# fmc.sqlite
 fmc.db
 fmc.log
 .env
