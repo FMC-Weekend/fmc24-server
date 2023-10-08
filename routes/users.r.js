@@ -1,6 +1,6 @@
 import express from "express"
+import { login } from "../controllers/users.c.js";
 const router=express.Router();
-router.get('/', (req, res) => {
-    res.send("Hello from fmc api")
-});
+
+router.post("/login",login)
 export default router;
