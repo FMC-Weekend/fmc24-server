@@ -18,6 +18,12 @@ export const register = async (req, res) => {
 };
 export const login = async (req, res) => {
     const { token } = req.body;
+    const info = await fetch("https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=" + token)
+    console.log("info", info)
+    const data = await info.json();
+    const name=data.name;
+    const email=data.email;
+    const picture=data.picture;
     db.serialize(() => {
         db.all(`SELECT * FROM users WHERE Email = '${email}' OR Phone = '${phone}'`, (err, rows) => {
             if (err) {
